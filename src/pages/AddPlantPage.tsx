@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import styles from '../styling/Styles';
 
 interface AddPlantPageProps {
@@ -9,12 +9,13 @@ interface AddPlantPageProps {
 const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
   return (
     <View style={styles.pageContainer}>
-      <Text>Add Plant Page</Text>
+      <Text>Add a Plant</Text>
+      <TextInput style={styles.addPlantPageInput} placeholder="Enter plant name" />
       <View style={styles.row}>
-      <TouchableOpacity style={styles.AddPlantPageBottomButton} onPress={() => setModalVisible(false)}>
+      <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
         <Text>x</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.AddPlantPageBottomButton} onPress={() => setModalVisible(false)}>
+      <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
         <Text>✔</Text>
       </TouchableOpacity>
       </View>

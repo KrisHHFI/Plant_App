@@ -1,13 +1,18 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  AddPlantPageBottomButton: {
+  addPlantPageBottomButton: {
     alignItems: 'center',
     backgroundColor: 'lightgrey',
     borderRadius: 25,
     height: 50,
     justifyContent: 'center',
     width: 50,
+  },
+  addPlantPageInput: {
+    borderColor: 'black',
+    borderWidth: 1,
+    width: '100%',
   },
   appContentContainer: {
     flex: 1,
@@ -20,12 +25,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'lightgrey',
     borderRadius: 25,
-    bottom: 50,
+    bottom: 10,
     height: 50,
     justifyContent: 'center',
-    left: '50%',
     position: 'absolute',
-    transform: [{ translateX: -25 }],
     width: 50,
   },
   navBarButton: {
@@ -52,6 +55,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'orange',
     flex: 1,
     justifyContent: 'space-between',
+    marginBottom: 50,
+    paddingBottom: 15,
+    paddingLeft: 15,
+    paddingTop: 15,
+    paddingRight: 15,
   },
   row: {
     flexDirection: 'row',

@@ -29,7 +29,7 @@ function App(): React.JSX.Element {
         <View style={styles.appContentContainer}>
           {renderPage()}
         </View>
-        <NavBar setCurrentPage={setCurrentPage} />
+        <NavBar setCurrentPage={setCurrentPage} currentPage={currentPage} />
       </SafeAreaView>
     </AppProvider>
   );

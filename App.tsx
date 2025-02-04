@@ -5,6 +5,7 @@ import styles from './src/styling/Styles';
 import ListPage from './src/pages/ListPage';
 import ProfilePage from './src/pages/ProfilePage';
 import SettingsPage from './src/pages/SettingsPage';
+import { AppProvider } from './src/context/Context';
 
 function App(): React.JSX.Element {
   const [currentPage, setCurrentPage] = useState('List');
@@ -23,12 +24,14 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={styles.appSafeAreaContainer}>
-      <View style={styles.appContentContainer}>
-        {renderPage()}
-      </View>
-      <NavBar setCurrentPage={setCurrentPage} />
-    </SafeAreaView>
+    <AppProvider>
+      <SafeAreaView style={styles.appSafeAreaContainer}>
+        <View style={styles.appContentContainer}>
+          {renderPage()}
+        </View>
+        <NavBar setCurrentPage={setCurrentPage} />
+      </SafeAreaView>
+    </AppProvider>
   );
 }
 

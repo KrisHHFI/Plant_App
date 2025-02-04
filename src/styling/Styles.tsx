@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'orange',
     flex: 1,
-    justifyContent: 'space-between',
     marginBottom: 50,
     paddingBottom: 15,
     paddingLeft: 15,

@@ -23,8 +23,8 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={styles.appSafeAreaView}>
-      <View style={styles.appContentView}>
+    <SafeAreaView style={styles.appSafeAreaContainer}>
+      <View style={styles.appContentContainer}>
         {renderPage()}
       </View>
       <NavBar setCurrentPage={setCurrentPage} />

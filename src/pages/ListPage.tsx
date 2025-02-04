@@ -1,11 +1,22 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Modal } from 'react-native';
+import styles from '../../src/styling/Styles';
+import AddPlantPage from './AddPlantPage';
 
 const ListPage = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
   return (
-    <View>
+    <View style={styles.pageContainer}>
       <Text>List Page</Text>
-      <Text>Add Plant Button</Text>
+      
+      <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
+        <Text>+</Text>
+      </TouchableOpacity>
+
+      <Modal visible={isModalVisible} animationType="slide" transparent>
+        <AddPlantPage setModalVisible={setModalVisible} />
+      </Modal>
     </View>
   );
 };

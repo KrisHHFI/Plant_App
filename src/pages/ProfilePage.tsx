@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import styles from '../../src/styling/Styles';
 
 const ProfilePage = () => {
   return (
-    <View>
+    <View style={styles.pageContainer}>
       <Text>Profile Page</Text>
     </View>
   );

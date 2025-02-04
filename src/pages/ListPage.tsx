@@ -5,6 +5,7 @@ const ListPage = () => {
   return (
     <View>
       <Text>List Page</Text>
+      <Text>Add Plant Button</Text>
     </View>
   );
 };

@@ -3,7 +3,7 @@ import React, { createContext, useState, ReactNode } from 'react';
 interface Plant {
     name: string;
     imageUrl: string;
-    date: string;
+    date: Date;
 }
 
 interface ContextProps {

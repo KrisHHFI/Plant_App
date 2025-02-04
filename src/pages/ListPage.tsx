@@ -14,7 +14,7 @@ const ListPage = () => {
       <Text>List Page</Text>
       <ScrollView style={styles.listPageScrollContainer}>
         {plantString.map((plant, index) => (
-          <ListItem key={index} name={plant.name} />
+          <ListItem key={index} name={plant.name} date={plant.date} />
         ))}
       </ScrollView>
       <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>

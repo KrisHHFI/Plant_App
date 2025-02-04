@@ -15,7 +15,7 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
     if (plantName.trim()) {
       setPlantString(prevPlants => [
         ...prevPlants,
-        { name: plantName, imageUrl: '', date: new Date().toISOString() },
+        { name: plantName, imageUrl: '', date: new Date() },
       ]);
       setPlantName('');
       setModalVisible(false);

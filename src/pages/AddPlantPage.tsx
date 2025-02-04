@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
-import { launchImageLibrary } from 'react-native-image-picker';
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker';  // Updated import
 import { AppContext } from '../context/Context';
 import styles from '../styling/Styles';
 
@@ -13,7 +13,7 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
   const [plantName, setPlantName] = useState('');
   const [imageUri, setImageUri] = useState<string | null>(null);
 
-  // Function to launch the image picker
+  // Function to launch the image picker for selecting an image
   const handleSelectImage = () => {
     launchImageLibrary(
       { mediaType: 'photo', quality: 0.5 },
@@ -24,7 +24,23 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
           console.log('Image Picker Error: ', response.errorMessage);
         } else {
           const uri = response.assets && response.assets[0].uri;
-          // If uri is undefined, set imageUri to null, otherwise set it to the uri string
+          setImageUri(uri || null);
+        }
+      },
+    );
+  };
+
+  // Function to launch the camera for taking a photo
+  const handleTakePhoto = () => {
+    launchCamera(
+      { mediaType: 'photo', quality: 0.5 },
+      (response) => {
+        if (response.didCancel) {
+          console.log('User cancelled camera');
+        } else if (response.errorCode) {
+          console.log('Camera Error: ', response.errorMessage);
+        } else {
+          const uri = response.assets && response.assets[0].uri;
           setImageUri(uri || null);
         }
       },
@@ -54,14 +70,17 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
         onChangeText={setPlantName}
       />
 
+      {/* Button to select an image */}
       <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
         <Text>Add Image</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.addPlantPageBottomButton}>
-        <Text>Take photo</Text>
+      {/* Button to take a photo */}
+      <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
+        <Text>Take Photo</Text>
       </TouchableOpacity>
 
+      {/* Display selected image */}
       {imageUri && (
         <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
       )}

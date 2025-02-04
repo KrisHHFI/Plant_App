@@ -14,13 +14,12 @@ const ListPage = () => {
       <Text>List Page</Text>
       <ScrollView style={styles.listPageScrollContainer}>
         {plantString.map((plant, index) => (
-          <ListItem key={index} name={plant.name} date={plant.date} />
+          <ListItem key={index} date={plant.date} image={plant.imageUrl} name={plant.name} />
         ))}
       </ScrollView>
       <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
         <Text>+</Text>
       </TouchableOpacity>
-
       <Modal visible={isModalVisible} animationType="slide" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />
       </Modal>

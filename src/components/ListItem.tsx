@@ -3,14 +3,18 @@ import { View, Text, Image } from 'react-native';
 import styles from '../../src/styling/Styles';
 
 interface ListItemProps {
-    name: string;
     date: Date;
+    image: string;
+    name: string;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ name, date }) => {
+const ListItem: React.FC<ListItemProps> = ({ name, date, image }) => {
     return (
         <View style={styles.listItemContainer}>
-            <Image source={require('../assets/images/PlaceHolderPlant.png')} style={styles.listItemImage} />
+            <Image
+                source={image ? { uri: image } : require('../assets/images/PlaceHolderPlant.png')}
+                style={styles.listItemImage}
+            />
             <Text>{name}</Text>
             <Text>{date.toLocaleDateString()}</Text>
         </View>

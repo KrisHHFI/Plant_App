@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import styles from '../../src/styling/Styles';
 import AddPlantPage from './AddPlantPage';
 import ListItem from '../components/ListItem';
@@ -12,11 +12,11 @@ const ListPage = () => {
   return (
     <View style={styles.pageContainer}>
       <Text>List Page</Text>
-      <View>
+      <ScrollView style={styles.listPageScrollContainer}>
         {plantString.map((plant, index) => (
           <ListItem key={index} name={plant.name} />
         ))}
-      </View>
+      </ScrollView>
       <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
         <Text>+</Text>
       </TouchableOpacity>

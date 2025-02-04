@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import styles from '../../src/styling/Styles';
 
 interface ListItemProps {
     name: string;
@@ -7,7 +8,8 @@ interface ListItemProps {
 
 const ListItem: React.FC<ListItemProps> = ({ name }) => {
     return (
-        <View>
+        <View style={styles.listItemContainer}>
+            <Image source={require('../assets/images/PlaceHolderPlant.png')} style={styles.listItemImage} />
             <Text>{name}</Text>
         </View>
     );

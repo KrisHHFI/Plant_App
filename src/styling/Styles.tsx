@@ -31,6 +31,22 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 50,
   },
+  listPageScrollContainer: {
+    width: '100%',
+  },
+  listItemContainer: {
+    backgroundColor: 'cyan',
+    marginTop: 15,
+    overflow: 'hidden',
+    width: '100%',
+  },
+
+  listItemImage: {
+    height: 160,
+    width: '100%',
+    resizeMode: 'cover',
+  },
+
   navBarButton: {
     alignItems: 'center',
     alignSelf: 'stretch',

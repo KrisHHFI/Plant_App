@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import styles from '../../src/styling/Styles';
 
 type PageTitleProps = {
@@ -8,7 +8,9 @@ type PageTitleProps = {
 
 const PageTitle: React.FC<PageTitleProps> = ({ text = '' }) => {
     return (
-        <Text style={styles.pageTitle}>{text}</Text>
+        <View style={styles.pageTitleContainer}>
+            <Text style={styles.pageTitle}>{text}</Text>
+        </View>
     );
 };
 

@@ -64,28 +64,30 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Add Specimen" />
-      <TextInput
-        style={styles.addPlantPageInput}
-        placeholder="Enter plant name"
-        value={plantName}
-        onChangeText={setPlantName}
-      />
-      <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
-        <Text>Add Image</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
-        <Text>Take Photo</Text>
-      </TouchableOpacity>
-      {imageUri && (
-        <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
-      )}
-      <View style={styles.row}>
-        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
-          <Text>x</Text>
+      <View style={styles.pagePadding}>
+        <TextInput
+          style={styles.addPlantPageInput}
+          placeholder="Enter plant name"
+          value={plantName}
+          onChangeText={setPlantName}
+        />
+        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
+          <Text>Add Image</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleAddPlant}>
-          <Text>✔</Text>
+        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
+          <Text>Take Photo</Text>
         </TouchableOpacity>
+        {imageUri && (
+          <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
+        )}
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
+            <Text>x</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleAddPlant}>
+            <Text>✔</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );

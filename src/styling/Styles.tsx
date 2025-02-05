@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const NAVBAR_HEIGHT = 70; 
+const NAVBAR_HEIGHT = 70;
 
 const styles = StyleSheet.create({
   addPlantPageBottomButton: {
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
   },
   listItemContainer: {
     backgroundColor: 'cyan',
-    marginTop: 15,
+    marginBottom: 8,
+    marginTop: 8,
     overflow: 'hidden',
     width: '100%',
   },
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'cover',
   },
-
   navBarButton: {
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -79,18 +79,28 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   pageContainer: {
-    alignItems: 'center',
     backgroundColor: 'white',
     flex: 1,
-    paddingBottom: NAVBAR_HEIGHT + 25,
+  },
+  pagePadding: {
+    alignItems: 'center',
+    //backgroundColor: 'yellow',
+    flex: 1,
+    paddingBottom: NAVBAR_HEIGHT + 15,
     paddingLeft: 15,
-    paddingTop: 25,
     paddingRight: 15,
+    paddingTop: 15,
+  },
+  pageTitleContainer: {
+    backgroundColor: 'black',
+    height: 80,
+    justifyContent: 'center',
+    width: '100%',
   },
   pageTitle: {
-    fontSize: 35,
+    color: 'orange',
+    fontSize: 30,
     fontWeight: 'bold',
-    paddingBottom: 5,
     textAlign: 'center',
   },
   row: {

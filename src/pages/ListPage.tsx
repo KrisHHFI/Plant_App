@@ -12,16 +12,18 @@ const ListPage = () => {
 
   return (
     <View style={styles.pageContainer}>
-      <PageTitle text="Solar Garden"/>
-      <ScrollView
-        style={styles.listPageScrollContainer}>
-        {plantString.map((plant, index) => (
-          <ListItem key={index} date={plant.date} image={plant.imageUrl} name={plant.name} />
-        ))}
-      </ScrollView>
-      <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
-        <Text>+</Text>
-      </TouchableOpacity>
+      <PageTitle text="Solar Garden" />
+      <View style={styles.pagePadding}>
+        <ScrollView
+          style={styles.listPageScrollContainer}>
+          {plantString.map((plant, index) => (
+            <ListItem key={index} date={plant.date} image={plant.imageUrl} name={plant.name} />
+          ))}
+        </ScrollView>
+        <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
+          <Text>+</Text>
+        </TouchableOpacity>
+      </View>
       <Modal visible={isModalVisible} animationType="slide" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />
       </Modal>

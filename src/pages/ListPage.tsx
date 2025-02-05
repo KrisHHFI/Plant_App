@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
 import styles from '../../src/styling/Styles';
 import AddPlantPage from './AddPlantPage';
 import ListItem from '../components/ListItem';
+import PageTitle from '../components/PageTitle';
 import { AppContext } from '../context/Context';
 
 const ListPage = () => {
@@ -11,7 +12,7 @@ const ListPage = () => {
 
   return (
     <View style={styles.pageContainer}>
-      <Text>List Page</Text>
+      <PageTitle text="Solar Garden"/>
       <ScrollView
         style={styles.listPageScrollContainer}>
         {plantString.map((plant, index) => (

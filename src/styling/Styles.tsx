@@ -82,10 +82,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     flex: 1,
-    paddingBottom: NAVBAR_HEIGHT + 15,
+    paddingBottom: NAVBAR_HEIGHT + 25,
     paddingLeft: 15,
-    paddingTop: 15,
+    paddingTop: 25,
     paddingRight: 15,
+  },
+  pageTitle: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    paddingBottom: 5,
+    textAlign: 'center',
   },
   row: {
     flexDirection: 'row',

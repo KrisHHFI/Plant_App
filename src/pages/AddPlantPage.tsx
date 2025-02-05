@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
 import { launchImageLibrary, launchCamera } from 'react-native-image-picker';  // Updated import
 import { AppContext } from '../context/Context';
 import styles from '../styling/Styles';
+import PageTitle from '../components/PageTitle';
 
 interface AddPlantPageProps {
   setModalVisible: (visible: boolean) => void;
@@ -62,30 +63,22 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
 
   return (
     <View style={styles.pageContainer}>
-      <Text>Add a Plant</Text>
+      <PageTitle text="Add Specimen" />
       <TextInput
         style={styles.addPlantPageInput}
         placeholder="Enter plant name"
         value={plantName}
         onChangeText={setPlantName}
       />
-
-      {/* Button to select an image */}
       <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
         <Text>Add Image</Text>
       </TouchableOpacity>
-
-      {/* Button to take a photo */}
       <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
         <Text>Take Photo</Text>
       </TouchableOpacity>
-
-      {/* Display selected image */}
       {imageUri && (
         <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
       )}
-
-      {/* Bottom buttons */}
       <View style={styles.row}>
         <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
           <Text>x</Text>

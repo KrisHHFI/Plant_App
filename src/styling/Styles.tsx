@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
   },
   pageTitle: {
     color: 'orange',
+    fontFamily: 'Audiowide-Regular',
     fontSize: 30,
-    fontWeight: 'bold',
     textAlign: 'center',
   },
   row: {

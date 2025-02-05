@@ -12,7 +12,7 @@ const ListItem: React.FC<ListItemProps> = ({ name, date, image }) => {
     return (
         <View style={styles.listItemContainer}>
             <Image
-                source={image ? { uri: image } : require('../assets/images/PlaceHolderPlant.png')}
+                source={image ? { uri: image } : require('../../assets/images/PlaceHolderPlant.png')}
                 style={styles.listItemImage}
             />
             <Text>{name}</Text>

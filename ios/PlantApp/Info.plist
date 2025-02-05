@@ -53,9 +53,9 @@
 	<string>This app requires access to your photo library to select plant images.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs permission to save plant images to your photo library.</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Audiowide-Regular.ttf</string>
-	</array>
+  <key>UIAppFonts</key>
+  <array>
+      <string>Audiowide-Regular.ttf</string>
+  </array>
 </dict>
 </plist>

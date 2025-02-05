@@ -12,7 +12,8 @@ const ListPage = () => {
   return (
     <View style={styles.pageContainer}>
       <Text>List Page</Text>
-      <ScrollView style={styles.listPageScrollContainer}>
+      <ScrollView
+        style={styles.listPageScrollContainer}>
         {plantString.map((plant, index) => (
           <ListItem key={index} date={plant.date} image={plant.imageUrl} name={plant.name} />
         ))}

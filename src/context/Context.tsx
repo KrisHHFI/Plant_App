@@ -11,8 +11,11 @@ interface ContextProps {
     setPlantString: React.Dispatch<React.SetStateAction<Plant[]>>;
 }
 
-export const AppContext = createContext<ContextProps | undefined>(undefined);
-
+export const AppContext = createContext<ContextProps>({
+    plantString: [],
+    setPlantString: () => {},
+  });
+  
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [plantString, setPlantString] = useState<Plant[]>([]);
 

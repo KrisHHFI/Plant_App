@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   appSafeAreaContainer: {
-    backgroundColor: 'yellow',
+    backgroundColor: 'transparent',
     flex: 1,
   },
   listPageAddButton: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   pageContainer: {
     alignItems: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
     flex: 1,
     paddingBottom: NAVBAR_HEIGHT + 15,
     paddingLeft: 15,

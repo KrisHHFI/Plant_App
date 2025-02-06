@@ -11,10 +11,12 @@ interface ListItemProps {
 const ListItem: React.FC<ListItemProps> = ({ name, date, image }) => {
     return (
         <View style={styles.listItemContainer}>
-            <Image
-                source={image ? { uri: image } : require('../../assets/images/PlaceHolderPlant.png')}
-                style={styles.listItemImage}
-            />
+            <View style={styles.listItemImageContainer}>
+                <Image
+                    source={image ? { uri: image } : require('../../assets/images/PlaceHolderPlant.png')}
+                    style={styles.listItemImage}
+                />
+            </View>
             <Text>{name}</Text>
             <Text>{date.toLocaleDateString()}</Text>
         </View>

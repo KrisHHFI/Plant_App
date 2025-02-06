@@ -37,19 +37,28 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   listItemContainer: {
-    backgroundColor: 'cyan',
-    marginBottom: 8,
-    marginTop: 8,
+    alignItems: 'center',
+    borderColor: '#c7c7c7',
+    borderRadius: 10,
+    borderWidth: 1,
+    marginBottom: 10,
+    marginTop: 10,
     overflow: 'hidden',
     width: '100%',
   },
-  listItemImage: {
-    height: 160,
+  listItemImageContainer: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    borderBottomColor: '#c7c7c7',
+    borderBottomWidth: 1,
+    height: 200,
+    justifyContent: 'center',
     width: '100%',
-    resizeMode: 'cover',
   },
-  moadalPage: {
-
+  listItemImage: {
+    flex: 1,
+    resizeMode: 'contain',
+    width: '100%',
   },
   navBarButton: {
     alignItems: 'center',
@@ -63,12 +72,6 @@ const styles = StyleSheet.create({
   },
   navBarButtonActive: {
     backgroundColor: 'black',
-  },
-  navBarButtonText: {
-    color: 'black',
-  },
-  navBarButtonTextActive: {
-    color: 'white',
   },
   navBarContainer: {
     borderTopColor: 'black',

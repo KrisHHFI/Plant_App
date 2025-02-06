@@ -12,6 +12,7 @@ interface AddPlantPageProps {
 const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
   const { setPlantString } = useContext(AppContext)!;
   const [plantName, setPlantName] = useState('');
+  const [plantNote, setPlantNote] = useState('');
   const [imageUri, setImageUri] = useState<string | null>(null);
 
   // Function to launch the image picker for selecting an image
@@ -53,10 +54,16 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
     if (plantName.trim()) {
       setPlantString((prevPlants) => [
         ...prevPlants,
-        { name: plantName, imageUrl: imageUri || '', date: new Date() },
+        {
+          name: plantName,
+          note: plantNote,
+          imageUrl: imageUri || '',
+          date: new Date()
+        },
       ]);
       setPlantName('');
-      setImageUri(null); // Reset image after adding plant
+      setPlantNote('');
+      setImageUri(null);
       setModalVisible(false);
     }
   };
@@ -67,9 +74,15 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
       <View style={styles.pageContent}>
         <TextInput
           style={styles.addPlantPageInput}
-          placeholder="Enter plant name"
+          placeholder="Plant name*"
           value={plantName}
           onChangeText={setPlantName}
+        />
+        <TextInput
+          style={styles.addPlantPageInput}
+          placeholder="Notes"
+          value={plantNote}
+          onChangeText={setPlantNote}
         />
         <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
           <Text>Add Image</Text>

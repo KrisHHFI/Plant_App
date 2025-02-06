@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     width: '100%',
   },
-  listItemDate: {
+  listItemText: {
     fontStyle: 'italic',
     paddingBottom: 5,
     paddingLeft: 10,

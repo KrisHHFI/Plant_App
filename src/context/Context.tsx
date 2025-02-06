@@ -4,6 +4,7 @@ interface Plant {
     name: string;
     imageUrl: string;
     date: Date;
+    note: string;
 }
 
 interface ContextProps {

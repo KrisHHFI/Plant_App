@@ -97,13 +97,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
   },
+  noPlantsTextContainer: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   pageContainer: {
     backgroundColor: 'white',
     flex: 1,
   },
   pageContent: {
     alignItems: 'center',
-    //backgroundColor: 'yellow',
     flex: 1,
     justifyContent: 'space-between',
     paddingBottom: NAVBAR_HEIGHT + 15,

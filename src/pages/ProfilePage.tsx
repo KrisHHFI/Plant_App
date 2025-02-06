@@ -6,7 +6,7 @@ import PageTitle from '../components/PageTitle';
 const ProfilePage = () => {
   return (
     <View style={styles.pageContainer}>
-      <PageTitle text="Botanist AX-4421"/>
+      <PageTitle text="Profile"/>
       <View style={styles.pageContent}></View>
     </View>
   );

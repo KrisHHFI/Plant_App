@@ -6,7 +6,7 @@ import PageTitle from '../components/PageTitle';
 const SettingsPage = () => {
   return (
     <View style={styles.pageContainer}>
-      <PageTitle text="Hydroponic Settings" />
+      <PageTitle text="Settings" />
       <View style={styles.pageContent}>
         <Text>Light / Dark theme toggle</Text>
       </View>

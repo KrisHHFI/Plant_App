@@ -84,15 +84,17 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
           value={plantNote}
           onChangeText={setPlantNote}
         />
-        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
-          <Text>Add Image</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
-          <Text>Take Photo</Text>
-        </TouchableOpacity>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
+            <Text>Add Image</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
+            <Text>Take Photo</Text>
+          </TouchableOpacity>
+        </View>
         {imageUri && (
-          <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
-        )}
+            <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
+          )}
         <View style={styles.row}>
           <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
             <Text>x</Text>

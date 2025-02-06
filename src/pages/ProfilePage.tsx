@@ -7,7 +7,7 @@ const ProfilePage = () => {
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Botanist AX-4421"/>
-      <View style={styles.pagePadding}></View>
+      <View style={styles.pageContent}></View>
     </View>
   );
 };

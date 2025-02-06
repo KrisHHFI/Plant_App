@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'lightgrey',
     borderRadius: 25,
-    height: NAVBAR_HEIGHT,
+    height: 50,
     justifyContent: 'center',
-    width: NAVBAR_HEIGHT,
+    width: 70,
   },
   addPlantPageInput: {
     borderColor: 'black',
@@ -43,11 +43,13 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     width: '100%',
   },
-
   listItemImage: {
     height: 160,
     width: '100%',
     resizeMode: 'cover',
+  },
+  moadalPage: {
+
   },
   navBarButton: {
     alignItems: 'center',
@@ -82,10 +84,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
   },
-  pagePadding: {
+  pageContent: {
     alignItems: 'center',
     //backgroundColor: 'yellow',
     flex: 1,
+    justifyContent: 'space-between',
     paddingBottom: NAVBAR_HEIGHT + 15,
     paddingLeft: 15,
     paddingRight: 15,

@@ -13,7 +13,7 @@ const ListPage = () => {
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Solar Garden" />
-      <View style={styles.pagePadding}>
+      <View style={styles.pageContent}>
         <ScrollView
           style={styles.listPageScrollContainer}>
           {plantString.map((plant, index) => (
@@ -24,7 +24,7 @@ const ListPage = () => {
           <Text>+</Text>
         </TouchableOpacity>
       </View>
-      <Modal visible={isModalVisible} animationType="slide" transparent>
+      <Modal visible={isModalVisible} animationType="fade" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />
       </Modal>
     </View>

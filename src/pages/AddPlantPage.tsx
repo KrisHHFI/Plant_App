@@ -64,7 +64,7 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Add Specimen" />
-      <View style={styles.pagePadding}>
+      <View style={styles.pageContent}>
         <TextInput
           style={styles.addPlantPageInput}
           placeholder="Enter plant name"

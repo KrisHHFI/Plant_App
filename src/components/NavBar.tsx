@@ -1,11 +1,24 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 import styles from '../styling/Styles';
+import CogIcon from '../../assets/images/Cog.png';
+import PlantIcon from '../../assets/images/Plant.png';
+import UserIcon from '../../assets/images/User.png';
+import CogOrangeIcon from '../../assets/images/CogOrange.png';
+import PlantOrangeIcon from '../../assets/images/PlantOrange.png';
+import UserOrangeIcon from '../../assets/images/UserOrange.png';
 
 interface NavBarProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
   currentPage: string;
 }
+
+const getIconForPage = (page: string, isActive: boolean) => {
+  if (page === 'Settings') return isActive ? CogOrangeIcon : CogIcon;
+  if (page === 'List') return isActive ? PlantOrangeIcon : PlantIcon;
+  if (page === 'Profile') return isActive ? UserOrangeIcon : UserIcon;
+  return null;
+};
 
 const NavBar: React.FC<NavBarProps> = ({ setCurrentPage, currentPage }) => {
   return (
@@ -19,9 +32,10 @@ const NavBar: React.FC<NavBarProps> = ({ setCurrentPage, currentPage }) => {
           ]}
           onPress={() => setCurrentPage(page)}
         >
-          <Text style={currentPage === page ? styles.navBarButtonTextActive : styles.navBarButtonText}>
-            {page}
-          </Text>
+          <Image
+            source={getIconForPage(page, currentPage === page)!}
+            style={{ width: 45, height: 45 }}
+          />
         </TouchableOpacity>
       ))}
     </View>

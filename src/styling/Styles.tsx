@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const NAVBAR_HEIGHT = 70;
+const APP_FONT = 'Audiowide-Regular';
 
 const styles = StyleSheet.create({
   addPlantPageBottomButton: {
@@ -23,6 +24,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     flex: 1,
   },
+  boldText: {
+    fontWeight: 'bold',
+  },
   listPageAddButton: {
     alignItems: 'center',
     backgroundColor: 'lightgrey',
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   listItemContainer: {
-    alignItems: 'center',
     borderColor: '#c7c7c7',
     borderRadius: 10,
     borderWidth: 1,
@@ -45,6 +48,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
     overflow: 'hidden',
     width: '100%',
+  },
+  listItemDate: {
+    fontStyle: 'italic',
+    paddingBottom: 5,
+    paddingLeft: 10,
   },
   listItemImageContainer: {
     alignItems: 'center',
@@ -59,6 +67,12 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
     width: '100%',
+  },
+  listItemTitle: {
+     fontSize: 23,
+     paddingBottom: 2,
+     paddingLeft: 10,
+     paddingTop: 5,
   },
   navBarButton: {
     alignItems: 'center',
@@ -105,7 +119,7 @@ const styles = StyleSheet.create({
   },
   pageTitle: {
     color: 'orange',
-    fontFamily: 'Audiowide-Regular',
+    fontFamily: APP_FONT,
     fontSize: 30,
     textAlign: 'center',
   },

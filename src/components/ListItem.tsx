@@ -17,8 +17,12 @@ const ListItem: React.FC<ListItemProps> = ({ name, date, image }) => {
                     style={styles.listItemImage}
                 />
             </View>
-            <Text>{name}</Text>
-            <Text>{date.toLocaleDateString()}</Text>
+            <Text style={styles.listItemTitle}>
+                Name: <Text style={styles.boldText}>{name}</Text>
+            </Text>
+            <Text style={styles.listItemDate}>
+                Added: <Text style={styles.boldText}>{date.toLocaleDateString()}</Text>
+            </Text>
         </View>
     );
 };

@@ -5,6 +5,7 @@ import AddPlantPage from './AddPlantPage';
 import ListItem from '../components/ListItem';
 import PageTitle from '../components/PageTitle';
 import { AppContext } from '../context/Context';
+import FloatingButton from '../components/FloatingButton';
 
 const ListPage = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -25,9 +26,7 @@ const ListPage = () => {
             ))}
           </ScrollView>
         )}
-        <TouchableOpacity style={styles.listPageAddButton} onPress={() => setModalVisible(true)}>
-          <Text>+</Text>
-        </TouchableOpacity>
+        <FloatingButton onPress={() => setModalVisible(true)} text={'+'}/>
       </View>
       <Modal visible={isModalVisible} animationType="fade" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />

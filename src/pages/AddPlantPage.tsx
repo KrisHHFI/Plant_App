@@ -4,6 +4,7 @@ import { launchImageLibrary, launchCamera } from 'react-native-image-picker';  /
 import { AppContext } from '../context/Context';
 import styles from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
+import FloatingButton from '../components/FloatingButton';
 
 interface AddPlantPageProps {
   setModalVisible: (visible: boolean) => void;
@@ -85,23 +86,16 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
           onChangeText={setPlantNote}
         />
         <View style={styles.row}>
-          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleSelectImage}>
-            <Text>Add Image</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleTakePhoto}>
-            <Text>Take Photo</Text>
-          </TouchableOpacity>
+          <FloatingButton onPress={handleSelectImage} text={'Add Image'}/>
+          <FloatingButton onPress={handleTakePhoto} text={'Take Photo'}/>
+
         </View>
         {imageUri && (
             <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
           )}
         <View style={styles.row}>
-          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={() => setModalVisible(false)}>
-            <Text>x</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.addPlantPageBottomButton} onPress={handleAddPlant}>
-            <Text>✔</Text>
-          </TouchableOpacity>
+          <FloatingButton onPress={() => setModalVisible(false)} text={'x'}/>
+          <FloatingButton onPress={handleAddPlant} text={'✔'}/>
         </View>
       </View>
     </View>

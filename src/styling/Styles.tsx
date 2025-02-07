@@ -27,15 +27,21 @@ const styles = StyleSheet.create({
   boldText: {
     fontWeight: 'bold',
   },
-  listPageAddButton: {
+  floatingButton: {
     alignItems: 'center',
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'black',
     borderRadius: 25,
-    bottom: NAVBAR_HEIGHT + 10,
+    //bottom: NAVBAR_HEIGHT + 10,
     height: 50,
     justifyContent: 'center',
-    position: 'absolute',
+    //position: 'absolute',
     width: 50,
+  },
+  floatingButtonText: {
+    color: 'white',
+    fontSize: 40,
+    fontWeight: 'bold',
+    lineHeight: 40,
   },
   listPageScrollContainer: {
     width: '100%',
@@ -69,10 +75,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   listItemTitle: {
-     fontSize: 23,
-     paddingBottom: 2,
-     paddingLeft: 10,
-     paddingTop: 5,
+    fontSize: 23,
+    paddingBottom: 2,
+    paddingLeft: 10,
+    paddingTop: 5,
   },
   navBarButton: {
     alignItems: 'center',

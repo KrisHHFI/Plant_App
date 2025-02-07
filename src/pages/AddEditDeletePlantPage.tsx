@@ -108,6 +108,9 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
         {imageUri && (
           <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
         )}
+         {selectedPlant && (
+            <FloatingButton text={'Delete'} />
+          )}
         <View style={styles.row}>
           <FloatingButton onPress={() => setModalVisible(false)} text={'x'}/>
           <FloatingButton onPress={handleAddOrUpdatePlant} text={'✔'}/>

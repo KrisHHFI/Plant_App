@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     lineHeight: 40,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   floatingButtonTextContainer: {
     width: 'auto',
@@ -148,6 +148,9 @@ const styles = StyleSheet.create({
     fontFamily: APP_FONT,
     fontSize: 30,
     textAlign: 'center',
+  },
+  redBackground: {
+    backgroundColor: 'red',
   },
   row: {
     flexDirection: 'row',

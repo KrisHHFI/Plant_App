@@ -20,7 +20,9 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ text = '', onPress }) =
     }
 
     return (
-        <TouchableOpacity style={[styles.floatingButton, styles.floatingButtonTextContainer]} onPress={onPress}>
+        <TouchableOpacity
+            style={[styles.floatingButton, text === 'Delete' ? styles.redBackground : styles.floatingButton, styles.floatingButtonTextContainer]}
+            onPress={onPress}>
             <Text style={styles.floatingButtonText}>{text}</Text>
         </TouchableOpacity>
     );

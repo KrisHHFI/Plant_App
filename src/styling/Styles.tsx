@@ -48,16 +48,20 @@ const styles = StyleSheet.create({
     width: 'auto',
   },
   listPageScrollContainer: {
+    borderColor: '#c7c7c7',
+    borderRadius: 10,
+    borderWidth: 1,
     width: '100%',
   },
   listItemContainer: {
     borderColor: '#c7c7c7',
     borderRadius: 10,
     borderWidth: 1,
-    marginBottom: 10,
-    marginTop: 10,
     overflow: 'hidden',
     width: '100%',
+  },
+  listItemContainerDivider: {
+    marginBottom: 10,
   },
   listItemText: {
     fontStyle: 'italic',

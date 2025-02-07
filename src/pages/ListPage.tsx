@@ -6,7 +6,6 @@ import ListItem from '../components/ListItem';
 import PageTitle from '../components/PageTitle';
 import { AppContext } from '../context/Context';
 import FloatingButton from '../components/FloatingButton';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ListPage = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -22,10 +21,13 @@ const ListPage = () => {
           </View>
         ) : (
           <ScrollView style={styles.listPageScrollContainer}>
-            {plantString.map((plant, index) => (
-              <ListItem key={index} date={plant.date} image={plant.imageUrl} name={plant.name} note={plant.note} />
-            ))}
-          </ScrollView>
+          {plantString.map((plant, index) => (
+            <React.Fragment key={index}>
+              <ListItem date={plant.date} image={plant.imageUrl} name={plant.name} note={plant.note} />
+              {index !== plantString.length - 1 && <View style={styles.listItemContainerDivider} />}
+            </React.Fragment>
+          ))}
+        </ScrollView>        
         )}
         <FloatingButton onPress={() => setModalVisible(true)} text={'+'}/>
         <View>

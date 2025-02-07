@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   listItemContainerDivider: {
-    marginBottom: 10,
+    marginBottom: 15,
   },
   listItemText: {
     fontStyle: 'italic',
@@ -127,6 +127,9 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 15,
+  },
+  pageContentCenter: {
+    justifyContent: 'center',
   },
   pageTitleContainer: {
     backgroundColor: 'black',

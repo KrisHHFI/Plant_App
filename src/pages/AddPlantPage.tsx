@@ -88,7 +88,6 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
         <View style={styles.row}>
           <FloatingButton onPress={handleSelectImage} text={'Add Image'}/>
           <FloatingButton onPress={handleTakePhoto} text={'Take Photo'}/>
-
         </View>
         {imageUri && (
             <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />

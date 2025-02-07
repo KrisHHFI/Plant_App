@@ -1,7 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Image, TouchableOpacity, Text } from 'react-native';
 import styles from '../../src/styling/Styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import CrossIcon from '../../assets/images/Cross.png';
+import PlusIcon from '../../assets/images/Plus.png';
+import TickIcon from '../../assets/images/Tick.png';
 
 interface FloatingButtonProps {
     text?: string;
@@ -12,9 +14,9 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ text = '', onPress }) =
     if (text === '+' || text === '✔' || text === 'x') {
         return (
             <TouchableOpacity style={styles.floatingButton} onPress={onPress}>
-                {text === '+' && <Icon name="plus" size={30} color="white" />}
-                {text === '✔' && <Icon name="check" size={30} color="white" />}
-                {text === 'x' && <Icon name="times" size={30} color="white" />}
+                {text === '+' && <Image source={PlusIcon} style={{ width: 30, height: 30 }} />}
+                {text === '✔' && <Image source={TickIcon} style={{ width: 30, height: 30 }} />}
+                {text === 'x' && <Image source={CrossIcon} style={{ width: 30, height: 30 }} />}
             </TouchableOpacity>
         );
     }

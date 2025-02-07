@@ -20,18 +20,20 @@ const ListPage = () => {
             <Text>Add your first plant</Text>
           </View>
         ) : (
-          <ScrollView style={styles.listPageScrollContainer}>
-          {plantString.map((plant, index) => (
-            <React.Fragment key={index}>
-              <ListItem date={plant.date} image={plant.imageUrl} name={plant.name} note={plant.note} />
-              {index !== plantString.length - 1 && <View style={styles.listItemContainerDivider} />}
-            </React.Fragment>
-          ))}
-        </ScrollView>        
+          <ScrollView style={styles.scrollContainer}>
+            {plantString
+              .slice() // Create a shallow copy to avoid mutating state
+              .sort((a, b) => a.name.localeCompare(b.name)) // Sort by name
+              .map((plant, index, sortedPlants) => (
+                <React.Fragment key={index}>
+                  <ListItem date={plant.date} image={plant.imageUrl} name={plant.name} note={plant.note} />
+                  {index !== sortedPlants.length - 1 && <View style={styles.listItemContainerDivider} />}
+                </React.Fragment>
+              ))}
+          </ScrollView>
+
         )}
-        <FloatingButton onPress={() => setModalVisible(true)} text={'+'}/>
-        <View>
-    </View>
+        <FloatingButton onPress={() => setModalVisible(true)} text={'+'} />
       </View>
       <Modal visible={isModalVisible} animationType="fade" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />

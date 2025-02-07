@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   floatingButtonTextContainer: {
     width: 'auto',
   },
-  listPageScrollContainer: {
+  scrollContainer: {
     borderColor: '#c7c7c7',
     borderRadius: 10,
     borderWidth: 1,
@@ -115,6 +115,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  paddingSmall: {
+    padding: 10,
+  },
   pageContainer: {
     backgroundColor: 'white',
     flex: 1,
@@ -130,6 +133,9 @@ const styles = StyleSheet.create({
   },
   pageContentCenter: {
     justifyContent: 'center',
+  },
+  pText: {
+    fontSize: 20,
   },
   pageTitleContainer: {
     backgroundColor: 'black',

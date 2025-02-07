@@ -13,9 +13,9 @@ interface AddEditDeletePlantPageProps {
 
 const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
   const { setPlantString } = useContext(AppContext)!;
-  const [plantName, setPlantName] = useState(selectedPlant?.name || ''); 
-  const [plantNote, setPlantNote] = useState(selectedPlant?.note || ''); 
-  const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null); 
+  const [plantName, setPlantName] = useState(selectedPlant?.name || '');
+  const [plantNote, setPlantNote] = useState(selectedPlant?.note || '');
+  const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null);
 
   useEffect(() => {
     if (selectedPlant) {
@@ -24,6 +24,14 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
       setImageUri(selectedPlant.imageUrl);
     }
   }, [selectedPlant]);
+
+  // Function to delete the selected plant
+  const handleDeletePlant = () => {
+    if (selectedPlant) {
+      setPlantString((prevPlants) => prevPlants.filter((plant) => plant.name !== selectedPlant.name));
+      setModalVisible(false); 
+    }
+  };
 
   // Function to launch the image picker for selecting an image
   const handleSelectImage = () => {
@@ -102,18 +110,18 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
           onChangeText={setPlantNote}
         />
         <View style={styles.row}>
-          <FloatingButton onPress={handleSelectImage} text={'Add Image'}/>
-          <FloatingButton onPress={handleTakePhoto} text={'Take Photo'}/>
+          <FloatingButton onPress={handleSelectImage} text={'Add Image'} />
+          <FloatingButton onPress={handleTakePhoto} text={'Take Photo'} />
         </View>
         {imageUri && (
           <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
         )}
-         {selectedPlant && (
-            <FloatingButton text={'Delete'} />
-          )}
+        {selectedPlant && (
+          <FloatingButton text={'Delete'} onPress={handleDeletePlant} />
+        )}
         <View style={styles.row}>
-          <FloatingButton onPress={() => setModalVisible(false)} text={'x'}/>
-          <FloatingButton onPress={handleAddOrUpdatePlant} text={'✔'}/>
+          <FloatingButton onPress={() => setModalVisible(false)} text={'x'} />
+          <FloatingButton onPress={handleAddOrUpdatePlant} text={'✔'} />
         </View>
       </View>
     </View>

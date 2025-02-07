@@ -4,7 +4,7 @@ const NAVBAR_HEIGHT = 70;
 const APP_FONT = 'Audiowide-Regular';
 
 const styles = StyleSheet.create({
-  addPlantPageBottomButton: {
+  addEditDeletePlantPageBottomButton: {
     alignItems: 'center',
     backgroundColor: 'lightgrey',
     borderRadius: 25,
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 70,
   },
-  addPlantPageInput: {
+  addEditDeletePlantPageInput: {
     borderColor: 'black',
     borderWidth: 1,
     width: '100%',

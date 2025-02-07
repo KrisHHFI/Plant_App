@@ -1,20 +1,29 @@
-import React, { useState, useContext } from 'react';
-import { View, Text, TouchableOpacity, TextInput, Image } from 'react-native';
-import { launchImageLibrary, launchCamera } from 'react-native-image-picker';  // Updated import
+import React, { useState, useContext, useEffect } from 'react';
+import { View, TextInput, Image } from 'react-native';
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 import { AppContext } from '../context/Context';
 import styles from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
 import FloatingButton from '../components/FloatingButton';
 
-interface AddPlantPageProps {
+interface AddEditDeletePlantPageProps {
   setModalVisible: (visible: boolean) => void;
+  selectedPlant: any;
 }
 
-const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
+const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
   const { setPlantString } = useContext(AppContext)!;
-  const [plantName, setPlantName] = useState('');
-  const [plantNote, setPlantNote] = useState('');
-  const [imageUri, setImageUri] = useState<string | null>(null);
+  const [plantName, setPlantName] = useState(selectedPlant?.name || ''); 
+  const [plantNote, setPlantNote] = useState(selectedPlant?.note || ''); 
+  const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null); 
+
+  useEffect(() => {
+    if (selectedPlant) {
+      setPlantName(selectedPlant.name);
+      setPlantNote(selectedPlant.note);
+      setImageUri(selectedPlant.imageUrl);
+    }
+  }, [selectedPlant]);
 
   // Function to launch the image picker for selecting an image
   const handleSelectImage = () => {
@@ -50,18 +59,25 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
     );
   };
 
-  // Add a new plant with the selected image and name
-  const handleAddPlant = () => {
+  // Add or update the plant with the selected image and name
+  const handleAddOrUpdatePlant = () => {
     if (plantName.trim()) {
-      setPlantString((prevPlants) => [
-        ...prevPlants,
-        {
-          name: plantName,
-          note: plantNote,
-          imageUrl: imageUri || '',
-          date: new Date()
-        },
-      ]);
+      const updatedPlant = {
+        name: plantName,
+        note: plantNote,
+        imageUrl: imageUri || '',
+        date: selectedPlant ? selectedPlant.date : new Date(),
+      };
+
+      setPlantString((prevPlants) => {
+        if (selectedPlant) {
+          return prevPlants.map((plant) =>
+            plant.name === selectedPlant.name ? updatedPlant : plant
+          );
+        }
+        return [...prevPlants, updatedPlant]; // Add new plant if not editing
+      });
+
       setPlantName('');
       setPlantNote('');
       setImageUri(null);
@@ -71,16 +87,16 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
 
   return (
     <View style={styles.pageContainer}>
-      <PageTitle text="Add Specimen" />
+      <PageTitle text={selectedPlant ? 'Edit Plant' : 'Add Plant'} />
       <View style={styles.pageContent}>
         <TextInput
-          style={styles.addPlantPageInput}
+          style={styles.addEditDeletePlantPageInput}
           placeholder="Plant name*"
           value={plantName}
           onChangeText={setPlantName}
         />
         <TextInput
-          style={styles.addPlantPageInput}
+          style={styles.addEditDeletePlantPageInput}
           placeholder="Notes"
           value={plantNote}
           onChangeText={setPlantNote}
@@ -90,15 +106,15 @@ const AddPlantPage: React.FC<AddPlantPageProps> = ({ setModalVisible }) => {
           <FloatingButton onPress={handleTakePhoto} text={'Take Photo'}/>
         </View>
         {imageUri && (
-            <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
-          )}
+          <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, marginBottom: 10 }} />
+        )}
         <View style={styles.row}>
           <FloatingButton onPress={() => setModalVisible(false)} text={'x'}/>
-          <FloatingButton onPress={handleAddPlant} text={'✔'}/>
+          <FloatingButton onPress={handleAddOrUpdatePlant} text={'✔'}/>
         </View>
       </View>
     </View>
   );
 };
 
-export default AddPlantPage;
+export default AddEditDeletePlantPage;

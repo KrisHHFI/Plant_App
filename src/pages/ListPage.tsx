@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { View, Text, Modal, ScrollView } from 'react-native';
 import styles from '../../src/styling/Styles';
 import AddPlantPage from './AddPlantPage';
 import ListItem from '../components/ListItem';
 import PageTitle from '../components/PageTitle';
 import { AppContext } from '../context/Context';
 import FloatingButton from '../components/FloatingButton';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ListPage = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -27,6 +28,8 @@ const ListPage = () => {
           </ScrollView>
         )}
         <FloatingButton onPress={() => setModalVisible(true)} text={'+'}/>
+        <View>
+    </View>
       </View>
       <Modal visible={isModalVisible} animationType="fade" transparent>
         <AddPlantPage setModalVisible={setModalVisible} />

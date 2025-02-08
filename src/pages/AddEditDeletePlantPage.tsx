@@ -1,34 +1,34 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { View, TextInput, Image } from 'react-native';
-import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
-import { AppContext } from '../context/Context';
-import { useDynamicStyles } from '../styling/Styles';
-import PageTitle from '../components/PageTitle';
-import FloatingButton from '../components/FloatingButton';
 import { AddEditDeletePlantPageProps } from '../../constants/interfaces';
+import { AppContext } from '../context/Context';
+import FloatingButton from '../components/FloatingButton';
+import { Image, TextInput, View } from 'react-native';
+import PageTitle from '../components/PageTitle';
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
+import React, { useContext, useEffect, useState } from 'react';
+import { useDynamicStyles } from '../styling/Styles';
 
-const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
+const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ selectedPlant, setModalVisible }) => {
   const { setPlantString, theme } = useContext(AppContext)!;
-  const styles = useDynamicStyles();
   const isDarkTheme = theme === 'Dark';
-  const [plantName, setPlantName] = useState(selectedPlant?.name || '');
-  const [plantNote, setPlantNote] = useState(selectedPlant?.note || '');
   const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null);
   const placeholderColor = isDarkTheme ? 'white' : 'black';
+  const [plantName, setPlantName] = useState(selectedPlant?.name || '');
+  const [plantNote, setPlantNote] = useState(selectedPlant?.note || '');
+  const styles = useDynamicStyles();
 
   useEffect(() => {
     if (selectedPlant) {
+      setImageUri(selectedPlant.imageUrl);
       setPlantName(selectedPlant.name);
       setPlantNote(selectedPlant.note);
-      setImageUri(selectedPlant.imageUrl);
     }
   }, [selectedPlant]);
 
   // Function to delete the selected plant
   const handleDeletePlant = () => {
     if (selectedPlant) {
-      setPlantString((prevPlants) => prevPlants.filter((plant) => plant.name !== selectedPlant.name));
       setModalVisible(false);
+      setPlantString((prevPlants) => prevPlants.filter((plant) => plant.name !== selectedPlant.name));
     }
   };
 
@@ -70,10 +70,10 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
   const handleAddOrUpdatePlant = () => {
     if (plantName.trim()) {
       const updatedPlant = {
+        date: selectedPlant ? selectedPlant.date : new Date(),
+        imageUrl: imageUri || '',
         name: plantName,
         note: plantNote,
-        imageUrl: imageUri || '',
-        date: selectedPlant ? selectedPlant.date : new Date(),
       };
 
       setPlantString((prevPlants) => {
@@ -85,10 +85,10 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
         return [...prevPlants, updatedPlant]; // Add new plant if not editing
       });
 
-      setPlantName('');
-      setPlantNote('');
       setImageUri(null);
       setModalVisible(false);
+      setPlantName('');
+      setPlantNote('');
     }
   };
 

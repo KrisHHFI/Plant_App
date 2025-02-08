@@ -1,18 +1,19 @@
-import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { useDynamicStyles } from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
+import { PROFILE_TEXT } from '../../constants/Strings';
+import React from 'react';
+import { ScrollView, Text, View } from 'react-native';
+import { useDynamicStyles } from '../styling/Styles';
 
 const ProfilePage = () => {
   const styles = useDynamicStyles();
-  
+
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Profile" />
       <View style={styles.pageContent}>
         <ScrollView style={styles.scrollContainer}>
           <Text style={[styles.pText, styles.paddingSmall]}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.{"\n\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.{"\n\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.{"\n\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.{"\n\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {PROFILE_TEXT}
           </Text>
         </ScrollView>
       </View>

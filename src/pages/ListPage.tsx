@@ -15,7 +15,6 @@ const ListPage = () => {
   const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
   const styles = useDynamicStyles();
 
-  // Handle double tap to open AddEditDeletePlantPage with pre-filled values
   const handleDoubleTap = (plant: Plant) => {
     const now = Date.now();
     const DOUBLE_TAP_DELAY = 300;
@@ -27,7 +26,6 @@ const ListPage = () => {
     setLastTap(now); // Update last tap time
   };
 
-  // Open the AddEditDeletePlantPage for adding a new plant
   const handleAddPlant = () => {
     setSelectedPlant(null);
     setModalVisible(true);
@@ -63,8 +61,8 @@ const ListPage = () => {
       </View>
       <Modal visible={isModalVisible} animationType="fade" transparent>
         <AddEditDeletePlantPage
-          setModalVisible={setModalVisible}
           selectedPlant={selectedPlant}
+          setModalVisible={setModalVisible}
         />
       </Modal>
     </View>

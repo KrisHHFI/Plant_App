@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import styles from '../../src/styling/Styles';
+import { useDynamicStyles } from '../../src/styling/Styles';
 
 interface ListItemProps {
     date: Date;
@@ -10,6 +10,8 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({ name, date, image, note }) => {
+    const styles = useDynamicStyles();
+
     return (
         <View style={styles.listItemContainer}>
             <View style={styles.listItemImageContainer}>

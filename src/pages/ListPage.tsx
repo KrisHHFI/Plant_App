@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, Modal, ScrollView, TouchableOpacity } from 'react-native';
-import styles from '../../src/styling/Styles';
+import { useDynamicStyles } from '../../src/styling/Styles';
 import AddEditDeletePlantPage from './AddEditDeletePlantPage';
 import ListItem from '../components/ListItem';
 import PageTitle from '../components/PageTitle';
@@ -15,6 +15,7 @@ interface Plant {
 }
 
 const ListPage = () => {
+  const styles = useDynamicStyles();
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
   const { plantString } = useContext(AppContext)!;

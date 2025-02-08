@@ -10,18 +10,26 @@ interface Plant {
 interface ContextProps {
     plantString: Plant[];
     setPlantString: React.Dispatch<React.SetStateAction<Plant[]>>;
+    theme: string;
+    setTheme: React.Dispatch<React.SetStateAction<string>>;
+    THEME_BACKGROUND_COLOUR_PRIMARY: string;
 }
 
 export const AppContext = createContext<ContextProps>({
     plantString: [],
-    setPlantString: () => {},
-  });
-  
+    setPlantString: () => { },
+    theme: "Light",
+    setTheme: () => { },
+    THEME_BACKGROUND_COLOUR_PRIMARY: 'white', 
+});
+
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [plantString, setPlantString] = useState<Plant[]>([]);
+    const [theme, setTheme] = useState<string>("Light");
+    const THEME_BACKGROUND_COLOUR_PRIMARY = theme === 'Light' ? 'white' : 'black';
 
     return (
-        <AppContext.Provider value={{ plantString, setPlantString }}>
+        <AppContext.Provider value={{ plantString, setPlantString, theme, setTheme, THEME_BACKGROUND_COLOUR_PRIMARY }}>
             {children}
         </AppContext.Provider>
     );

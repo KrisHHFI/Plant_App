@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
-import styles from '../styling/Styles';
+import { useDynamicStyles } from '../styling/Styles';
 import CogIcon from '../../assets/images/Cog.png';
 import PlantIcon from '../../assets/images/Plant.png';
 import UserIcon from '../../assets/images/User.png';
@@ -21,6 +21,8 @@ const getIconForPage = (page: string, isActive: boolean) => {
 };
 
 const NavBar: React.FC<NavBarProps> = ({ setCurrentPage, currentPage }) => {
+  const styles = useDynamicStyles();
+
   return (
     <View style={styles.navBarContainer}>
       {['List', 'Profile', 'Settings'].map((page) => (

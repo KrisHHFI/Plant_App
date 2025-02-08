@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { View, TextInput, Image } from 'react-native';
 import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 import { AppContext } from '../context/Context';
-import styles from '../styling/Styles';
+import { useDynamicStyles } from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
 import FloatingButton from '../components/FloatingButton';
 
@@ -13,6 +13,7 @@ interface AddEditDeletePlantPageProps {
 
 const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
   const { setPlantString } = useContext(AppContext)!;
+    const styles = useDynamicStyles();
   const [plantName, setPlantName] = useState(selectedPlant?.name || '');
   const [plantNote, setPlantNote] = useState(selectedPlant?.note || '');
   const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null);

@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import styles from '../../src/styling/Styles';
+import { useDynamicStyles } from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
 
 const ProfilePage = () => {
+  const styles = useDynamicStyles();
+  
   return (
     <View style={styles.pageContainer}>
       <PageTitle text="Profile" />

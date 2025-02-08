@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, TouchableOpacity, Text } from 'react-native';
-import styles from '../../src/styling/Styles';
+import { useDynamicStyles } from '../../src/styling/Styles';
 import CrossIcon from '../../assets/images/Cross.png';
 import PlusIcon from '../../assets/images/Plus.png';
 import TickIcon from '../../assets/images/Tick.png';
@@ -11,6 +11,8 @@ interface FloatingButtonProps {
 }
 
 const FloatingButton: React.FC<FloatingButtonProps> = ({ text = '', onPress }) => {
+    const styles = useDynamicStyles();
+
     if (text === '+' || text === '✔' || text === 'x') {
         return (
             <TouchableOpacity style={styles.floatingButton} onPress={onPress}>

@@ -10,6 +10,11 @@ export const handleAddOrUpdatePlant = (
   setModalVisible: (visible: boolean) => void,
   plantString: any[]
 ) => {
+  if (!plantName.trim()) {
+    Alert.alert('Error', 'Plant name cannot be empty.');
+    return;
+  }
+
   if (plantName.trim()) {
     // Check if plant name already exists excluding the current plant being edited
     const plantExists = plantString.some(

@@ -12,11 +12,13 @@ interface AddEditDeletePlantPageProps {
 }
 
 const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
-  const { setPlantString } = useContext(AppContext)!;
-    const styles = useDynamicStyles();
+  const { setPlantString, theme } = useContext(AppContext)!;
+  const styles = useDynamicStyles();
+  const isDarkTheme = theme === 'Dark';
   const [plantName, setPlantName] = useState(selectedPlant?.name || '');
   const [plantNote, setPlantNote] = useState(selectedPlant?.note || '');
   const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null);
+  const placeholderColor = isDarkTheme ? 'white' : 'black';
 
   useEffect(() => {
     if (selectedPlant) {
@@ -30,7 +32,7 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
   const handleDeletePlant = () => {
     if (selectedPlant) {
       setPlantString((prevPlants) => prevPlants.filter((plant) => plant.name !== selectedPlant.name));
-      setModalVisible(false); 
+      setModalVisible(false);
     }
   };
 
@@ -101,14 +103,14 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
         <TextInput
           style={styles.addEditDeletePlantPageInput}
           placeholder="Plant name*"
-          placeholderTextColor="black" 
+          placeholderTextColor={placeholderColor}
           value={plantName}
           onChangeText={setPlantName}
         />
         <TextInput
           style={styles.addEditDeletePlantPageInput}
           placeholder="Notes"
-          placeholderTextColor="black" 
+          placeholderTextColor={placeholderColor}
           value={plantNote}
           onChangeText={setPlantNote}
         />

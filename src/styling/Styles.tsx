@@ -21,6 +21,7 @@ export const useDynamicStyles = () => {
       borderColor: THEME_COLOUR_SECONDARY,
       borderRadius: 10,
       borderWidth: 2,
+      color: THEME_COLOUR_SECONDARY,
       fontSize: 16,
       height: 50,
       paddingLeft: 5,
@@ -73,6 +74,7 @@ export const useDynamicStyles = () => {
       marginBottom: 15,
     },
     listItemText: {
+      color: THEME_COLOUR_SECONDARY,
       fontStyle: 'italic',
       paddingBottom: 5,
       paddingLeft: 10,
@@ -92,6 +94,7 @@ export const useDynamicStyles = () => {
       width: '100%',
     },
     listItemTitle: {
+      color: THEME_COLOUR_SECONDARY,
       fontSize: 23,
       paddingBottom: 2,
       paddingLeft: 10,

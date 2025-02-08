@@ -1,3 +1,8 @@
+/**
+ * File Name: handleSelectImage.tsx
+ * Description: This function opens the users local image folder 
+ * and adds the chosen image url to the plant
+ */
 import { launchImageLibrary } from 'react-native-image-picker';
 
 export const handleSelectImage = (setImageUri: (uri: string | null) => void) => {

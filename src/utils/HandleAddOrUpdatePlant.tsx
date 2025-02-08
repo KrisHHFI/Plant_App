@@ -1,3 +1,7 @@
+/**
+ * File Name: HandleAddOrUpdatePlant.tsx
+ * Description: This function determines whether to add/or update a plant
+ */
 export const handleAddOrUpdatePlant = (
     plantName: string,
     plantNote: string,

@@ -1,3 +1,7 @@
+/**
+ * File Name: Context.tsx
+ * Description: Where the projects global values are stored
+ */
 import React, { createContext, useState, ReactNode } from 'react';
 import { ContextProps, Plant } from '../../constants/interfaces';
 

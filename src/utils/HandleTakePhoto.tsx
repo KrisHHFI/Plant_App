@@ -1,3 +1,8 @@
+/**
+ * File Name: handleTakePhoto.tsx
+ * Description: This function opens the users camera app
+ * and saves the image url to the plant
+ */
 import { launchCamera } from 'react-native-image-picker';
 
 export const handleTakePhoto = (setImageUri: (uri: string | null) => void) => {

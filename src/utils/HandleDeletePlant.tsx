@@ -1,3 +1,7 @@
+/**
+ * File Name: handleDeletePlant.tsx
+ * Description: This function deletes the selected plant
+ */
 export const handleDeletePlant = (
   selectedPlant: any, 
   setModalVisible: (visible: boolean) => void, 

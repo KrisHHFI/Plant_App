@@ -15,7 +15,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useDynamicStyles } from '../styling/Styles';
 
 const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ selectedPlant, setModalVisible }) => {
-  const { setPlantString, theme } = useContext(AppContext)!;
+  const { plantString, setPlantString, theme } = useContext(AppContext)!;
   const isDarkTheme = theme === 'Dark';
   const [imageUri, setImageUri] = useState<string | null>(selectedPlant?.imageUrl || null);
   const placeholderColor = isDarkTheme ? 'white' : 'black';
@@ -61,7 +61,7 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ selecte
         )}
         <View style={styles.row}>
           <FloatingButton onPress={() => setModalVisible(false)} text={'x'} />
-          <FloatingButton onPress={() => handleAddOrUpdatePlant(plantName, plantNote, imageUri, selectedPlant, setPlantString, setImageUri, setModalVisible)} text={'✔'} />
+          <FloatingButton onPress={() => handleAddOrUpdatePlant(plantName, plantNote, imageUri, selectedPlant, setPlantString, setImageUri, setModalVisible, plantString)} text={'✔'} />
         </View>
       </View>
     </View>

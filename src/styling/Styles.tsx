@@ -6,7 +6,7 @@ const NAVBAR_HEIGHT = 70;
 const APP_FONT = 'Audiowide-Regular';
 
 export const useDynamicStyles = () => {
-  const { THEME_BACKGROUND_COLOUR_PRIMARY } = useContext(AppContext);
+  const { THEME_COLOUR_PRIMARY, THEME_COLOUR_SECONDARY } = useContext(AppContext);
 
   return StyleSheet.create({
     addEditDeletePlantPageBottomButton: {
@@ -18,7 +18,7 @@ export const useDynamicStyles = () => {
       width: 70,
     },
     addEditDeletePlantPageInput: {
-      borderColor: 'black',
+      borderColor: THEME_COLOUR_SECONDARY,
       borderRadius: 10,
       borderWidth: 2,
       fontSize: 16,
@@ -38,7 +38,7 @@ export const useDynamicStyles = () => {
     },
     floatingButton: {
       alignItems: 'center',
-      backgroundColor: 'black',
+      backgroundColor: THEME_COLOUR_SECONDARY,
       borderRadius: 10,
       height: 50,
       justifyContent: 'center',
@@ -46,7 +46,7 @@ export const useDynamicStyles = () => {
       width: 50,
     },
     floatingButtonText: {
-      color: 'white',
+      color: THEME_COLOUR_PRIMARY,
       fontSize: 20,
       fontWeight: 'bold',
       lineHeight: 40,
@@ -100,18 +100,18 @@ export const useDynamicStyles = () => {
     navBarButton: {
       alignItems: 'center',
       alignSelf: 'stretch',
-      backgroundColor: THEME_BACKGROUND_COLOUR_PRIMARY,
-      borderColor: 'black',
+      backgroundColor: THEME_COLOUR_PRIMARY,
+      borderColor: THEME_COLOUR_SECONDARY,
       borderLeftWidth: 1,
       borderRightWidth: 1,
       flex: 1,
       justifyContent: 'center',
     },
     navBarButtonActive: {
-      backgroundColor: 'black',
+      backgroundColor: THEME_COLOUR_SECONDARY,
     },
     navBarContainer: {
-      borderTopColor: 'black',
+      borderTopColor: THEME_COLOUR_SECONDARY,
       borderTopWidth: 3,
       bottom: 0,
       flexDirection: 'row',
@@ -128,7 +128,7 @@ export const useDynamicStyles = () => {
       padding: 10,
     },
     pageContainer: {
-      backgroundColor: THEME_BACKGROUND_COLOUR_PRIMARY,
+      backgroundColor: THEME_COLOUR_PRIMARY,
       flex: 1,
     },
     pageContent: {
@@ -144,10 +144,13 @@ export const useDynamicStyles = () => {
       justifyContent: 'center',
     },
     pText: {
+      color: THEME_COLOUR_SECONDARY,
       fontSize: 20,
     },
     pageTitleContainer: {
       backgroundColor: 'black',
+      borderBottomColor: THEME_COLOUR_SECONDARY,
+      borderBottomWidth: 1,
       height: 80,
       justifyContent: 'center',
       width: '100%',

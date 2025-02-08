@@ -1,20 +1,5 @@
 import React, { createContext, useState, ReactNode } from 'react';
-
-interface Plant {
-    name: string;
-    imageUrl: string;
-    date: Date;
-    note: string;
-}
-
-interface ContextProps {
-    plantString: Plant[];
-    setPlantString: React.Dispatch<React.SetStateAction<Plant[]>>;
-    theme: string;
-    setTheme: React.Dispatch<React.SetStateAction<string>>;
-    THEME_COLOUR_PRIMARY: string;
-    THEME_COLOUR_SECONDARY: string;
-}
+import { ContextProps, Plant } from '../../constants/interfaces';
 
 export const AppContext = createContext<ContextProps>({
     plantString: [],

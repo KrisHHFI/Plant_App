@@ -11,11 +11,7 @@ import UserIconWhite from '../../assets/images/UserWhite.png';
 import CogOrangeIcon from '../../assets/images/CogOrange.png';
 import PlantOrangeIcon from '../../assets/images/PlantOrange.png';
 import UserOrangeIcon from '../../assets/images/UserOrange.png';
-
-interface NavBarProps {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-  currentPage: string;
-}
+import { NavBarProps } from '../../constants/interfaces';
 
 const getIconForPage = (page: string, isActive: boolean, isDarkTheme: boolean) => {
   if (isActive) {

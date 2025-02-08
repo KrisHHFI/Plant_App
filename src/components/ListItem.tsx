@@ -1,22 +1,16 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { useDynamicStyles } from '../../src/styling/Styles';
+import { Plant } from '../../constants/interfaces';
 
-interface ListItemProps {
-    date: Date;
-    image: string;
-    name: string;
-    note: string;
-}
-
-const ListItem: React.FC<ListItemProps> = ({ name, date, image, note }) => {
+const ListItem: React.FC<Plant> = ({date, imageUrl, name, note }) => {
     const styles = useDynamicStyles();
 
     return (
         <View style={styles.listItemContainer}>
             <View style={styles.listItemImageContainer}>
                 <Image
-                    source={image ? { uri: image } : require('../../assets/images/PlaceHolderPlant.png')}
+                    source={imageUrl ? { uri: imageUrl } : require('../../assets/images/PlaceHolderPlant.png')}
                     style={styles.listItemImage}
                 />
             </View>

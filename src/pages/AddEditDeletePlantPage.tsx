@@ -5,11 +5,7 @@ import { AppContext } from '../context/Context';
 import { useDynamicStyles } from '../styling/Styles';
 import PageTitle from '../components/PageTitle';
 import FloatingButton from '../components/FloatingButton';
-
-interface AddEditDeletePlantPageProps {
-  setModalVisible: (visible: boolean) => void;
-  selectedPlant: any;
-}
+import { AddEditDeletePlantPageProps } from '../../constants/interfaces';
 
 const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModalVisible, selectedPlant }) => {
   const { setPlantString, theme } = useContext(AppContext)!;

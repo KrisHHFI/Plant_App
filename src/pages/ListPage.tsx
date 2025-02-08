@@ -1,25 +1,19 @@
-import React, { useState, useContext } from 'react';
-import { View, Text, Modal, ScrollView, TouchableOpacity } from 'react-native';
-import { useDynamicStyles } from '../../src/styling/Styles';
-import AddEditDeletePlantPage from './AddEditDeletePlantPage';
-import ListItem from '../components/ListItem';
-import PageTitle from '../components/PageTitle';
 import { AppContext } from '../context/Context';
+import AddEditDeletePlantPage from './AddEditDeletePlantPage';
 import FloatingButton from '../components/FloatingButton';
-
-interface Plant {
-  name: string;
-  note: string;
-  imageUrl: string;
-  date: Date;
-}
+import ListItem from '../components/ListItem';
+import { Modal, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import PageTitle from '../components/PageTitle';
+import { Plant } from '../../constants/interfaces';
+import React, { useContext, useState } from 'react';
+import { useDynamicStyles } from '../../src/styling/Styles';
 
 const ListPage = () => {
-  const styles = useDynamicStyles();
   const [isModalVisible, setModalVisible] = useState(false);
-  const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
-  const { plantString } = useContext(AppContext)!;
   const [lastTap, setLastTap] = useState(0);
+  const { plantString } = useContext(AppContext)!;
+  const [selectedPlant, setSelectedPlant] = useState<Plant | null>(null);
+  const styles = useDynamicStyles();
 
   // Handle double tap to open AddEditDeletePlantPage with pre-filled values
   const handleDoubleTap = (plant: Plant) => {
@@ -58,7 +52,7 @@ const ListPage = () => {
                     onPress={() => handleDoubleTap(plant)}
                     activeOpacity={0.7}
                   >
-                    <ListItem date={plant.date} image={plant.imageUrl} name={plant.name} note={plant.note} />
+                    <ListItem date={plant.date} imageUrl={plant.imageUrl} name={plant.name} note={plant.note} />
                   </TouchableOpacity>
                   {index !== sortedPlants.length - 1 && <View style={styles.listItemContainerDivider} />}
                 </React.Fragment>

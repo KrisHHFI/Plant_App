@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
-import NavBar from './src/components/NavBar';
-import { useDynamicStyles } from './src/styling/Styles';
+import { AppProvider } from './src/context/Context';
 import ListPage from './src/pages/ListPage';
 import ProfilePage from './src/pages/ProfilePage';
+import NavBar from './src/components/NavBar';
+import React, { useState } from 'react';
+import { SafeAreaView, View } from 'react-native';
 import SettingsPage from './src/pages/SettingsPage';
-import { AppProvider } from './src/context/Context';
+import { useDynamicStyles } from './src/styling/Styles';
 
 function App(): React.JSX.Element {
   const styles = useDynamicStyles();

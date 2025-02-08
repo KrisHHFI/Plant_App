@@ -44,7 +44,7 @@ const ListPage = () => {
       <View style={styles.pageContent}>
         {plantString.length === 0 ? (
           <View style={styles.noPlantsTextContainer}>
-            <Text>Add your first plant</Text>
+            <Text style={styles.pText}>Add your first plant!</Text>
           </View>
         ) : (
           <ScrollView style={styles.scrollContainer}>

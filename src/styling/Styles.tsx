@@ -14,7 +14,11 @@ const styles = StyleSheet.create({
   },
   addEditDeletePlantPageInput: {
     borderColor: 'black',
-    borderWidth: 1,
+    borderRadius: 10,
+    borderWidth: 2,
+    fontSize: 16,
+    height: 50,
+    paddingLeft: 5,
     width: '100%',
   },
   appContentContainer: {
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
   floatingButton: {
     alignItems: 'center',
     backgroundColor: 'black',
-    borderRadius: 25,
+    borderRadius: 10,
     height: 50,
     justifyContent: 'center',
     margin: 5,
@@ -129,7 +133,7 @@ const styles = StyleSheet.create({
     paddingBottom: NAVBAR_HEIGHT + 15,
     paddingLeft: 15,
     paddingRight: 15,
-    paddingTop: 15,
+    paddingTop: 25,
   },
   pageContentCenter: {
     justifyContent: 'center',

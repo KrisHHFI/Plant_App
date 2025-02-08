@@ -100,12 +100,14 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ setModa
         <TextInput
           style={styles.addEditDeletePlantPageInput}
           placeholder="Plant name*"
+          placeholderTextColor="black" 
           value={plantName}
           onChangeText={setPlantName}
         />
         <TextInput
           style={styles.addEditDeletePlantPageInput}
           placeholder="Notes"
+          placeholderTextColor="black" 
           value={plantNote}
           onChangeText={setPlantNote}
         />

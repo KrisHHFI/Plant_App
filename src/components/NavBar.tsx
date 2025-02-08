@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { useDynamicStyles } from '../styling/Styles';
+import { AppContext } from '../context/Context';
 import CogIcon from '../../assets/images/Cog.png';
 import PlantIcon from '../../assets/images/Plant.png';
 import UserIcon from '../../assets/images/User.png';
+import CogIconWhite from '../../assets/images/CogWhite.png';
+import PlantIconWhite from '../../assets/images/PlantWhite.png';
+import UserIconWhite from '../../assets/images/UserWhite.png';
 import CogOrangeIcon from '../../assets/images/CogOrange.png';
 import PlantOrangeIcon from '../../assets/images/PlantOrange.png';
 import UserOrangeIcon from '../../assets/images/UserOrange.png';
@@ -13,15 +17,29 @@ interface NavBarProps {
   currentPage: string;
 }
 
-const getIconForPage = (page: string, isActive: boolean) => {
-  if (page === 'Settings') return isActive ? CogOrangeIcon : CogIcon;
-  if (page === 'List') return isActive ? PlantOrangeIcon : PlantIcon;
-  if (page === 'Profile') return isActive ? UserOrangeIcon : UserIcon;
+const getIconForPage = (page: string, isActive: boolean, isDarkTheme: boolean) => {
+  if (isActive) {
+    if (page === 'Settings') return CogOrangeIcon;
+    if (page === 'List') return PlantOrangeIcon;
+    if (page === 'Profile') return UserOrangeIcon;
+  } else {
+    if (isDarkTheme) {
+      if (page === 'Settings') return CogIconWhite;
+      if (page === 'List') return PlantIconWhite;
+      if (page === 'Profile') return UserIconWhite;
+    } else {
+      if (page === 'Settings') return CogIcon;
+      if (page === 'List') return PlantIcon;
+      if (page === 'Profile') return UserIcon;
+    }
+  }
   return null;
 };
 
 const NavBar: React.FC<NavBarProps> = ({ setCurrentPage, currentPage }) => {
   const styles = useDynamicStyles();
+  const { theme } = useContext(AppContext);
+  const isDarkTheme = theme === 'Dark';
 
   return (
     <View style={styles.navBarContainer}>
@@ -35,7 +53,7 @@ const NavBar: React.FC<NavBarProps> = ({ setCurrentPage, currentPage }) => {
           onPress={() => setCurrentPage(page)}
         >
           <Image
-            source={getIconForPage(page, currentPage === page)!}
+            source={getIconForPage(page, currentPage === page, isDarkTheme)!}
             style={{ width: 45, height: 45 }}
           />
         </TouchableOpacity>

@@ -1,3 +1,7 @@
+/**
+ * File Name: PageTitle.tsx
+ * Description: The project page titles
+ */
 import React from 'react';
 import { Text, View } from 'react-native';
 import { useDynamicStyles } from '../../src/styling/Styles';

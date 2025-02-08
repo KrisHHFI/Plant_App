@@ -1,3 +1,8 @@
+/**
+ * File Name: Styles.tsx
+ * Description: This file contains all the project's styling.
+ *              Style rules and their attributes are organized A-Z.
+ */
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { AppContext } from '../context/Context';

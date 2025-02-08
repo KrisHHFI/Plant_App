@@ -1,3 +1,7 @@
+/**
+ * File Name: Listitem.tsx
+ * Description: An individual plant list item
+ */
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { useDynamicStyles } from '../../src/styling/Styles';

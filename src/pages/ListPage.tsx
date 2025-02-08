@@ -1,3 +1,7 @@
+/**
+ * File Name: ListPage.tsx
+ * Description: The plant list view
+ */
 import { AppContext } from '../context/Context';
 import AddEditDeletePlantPage from './AddEditDeletePlantPage';
 import FloatingButton from '../components/FloatingButton';

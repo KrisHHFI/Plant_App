@@ -1,3 +1,7 @@
+/**
+ * File Name: AddEditDeletePlantPage.tsx
+ * Description: Plant add/edit/delete page
+ */
 import { AddEditDeletePlantPageProps } from '../../constants/interfaces';
 import { AppContext } from '../context/Context';
 import FloatingButton from '../components/FloatingButton';
@@ -32,18 +36,18 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ selecte
       <PageTitle text={selectedPlant ? 'Edit Plant' : 'Add Plant'} />
       <View style={styles.pageContent}>
         <TextInput
-          style={styles.addEditDeletePlantPageInput}
+          onChangeText={setPlantName}
           placeholder="Plant name*"
           placeholderTextColor={placeholderColor}
+          style={styles.addEditDeletePlantPageInput}
           value={plantName}
-          onChangeText={setPlantName}
         />
         <TextInput
-          style={styles.addEditDeletePlantPageInput}
+          onChangeText={setPlantNote}
           placeholder="Notes"
           placeholderTextColor={placeholderColor}
+          style={styles.addEditDeletePlantPageInput}
           value={plantNote}
-          onChangeText={setPlantNote}
         />
         <View style={styles.row}>
           <FloatingButton onPress={() => handleSelectImage(setImageUri)} text={'Add Image'} />
@@ -58,7 +62,7 @@ const AddEditDeletePlantPage: React.FC<AddEditDeletePlantPageProps> = ({ selecte
         <View style={styles.row}>
           <FloatingButton onPress={() => setModalVisible(false)} text={'x'} />
           <FloatingButton onPress={() => handleAddOrUpdatePlant(plantName, plantNote, imageUri, selectedPlant, setPlantString, setImageUri, setModalVisible)} text={'✔'} />
-          </View>
+        </View>
       </View>
     </View>
   );

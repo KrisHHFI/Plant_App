@@ -1,3 +1,7 @@
+/**
+ * File Name: ProfilePage.tsx
+ * Description: Placeholder user profile page
+ */
 import PageTitle from '../components/PageTitle';
 import { PROFILE_TEXT } from '../../constants/Strings';
 import React from 'react';

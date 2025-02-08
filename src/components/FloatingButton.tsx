@@ -1,3 +1,7 @@
+/**
+ * File Name: FloatingButton.tsx
+ * Description: The text and icon buttons seen across the app
+ */
 import React, { useContext } from 'react';
 import { Image, TouchableOpacity, Text } from 'react-native';
 import { useDynamicStyles } from '../../src/styling/Styles';

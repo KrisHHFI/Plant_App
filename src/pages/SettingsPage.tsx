@@ -1,3 +1,7 @@
+/**
+ * File Name: SettingsPage.tsx
+ * Description: Settings page which contains the lgiht/dark theme toggle
+ */
 import { AppContext } from '../context/Context';
 import FloatingButton from '../components/FloatingButton';
 import PageTitle from '../components/PageTitle';

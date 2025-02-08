@@ -1,3 +1,7 @@
+/**
+ * File Name: NavBar.tsx
+ * Description: The project nav bar
+ */
 import React, { useContext } from 'react';
 import { View, TouchableOpacity, Image } from 'react-native';
 import { useDynamicStyles } from '../styling/Styles';

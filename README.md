@@ -29,22 +29,27 @@ The nav bar, the page titles and the themes were loosely inspired by the ship co
 ## Screenshots
 
 <img src="gitHubImages/Nav bar and theme.gif" width= "300"/>
-Screenshot showing the nav bar and the light/dark themes
+GIF showing the nav bar and the light/dark themes
+
+<br/> <br/>
+
+<img src="gitHubImages/List view.gif" width= "300"/>
+GIF showing the list view in both themes
 
 <br/> <br/>
 
 <img src="gitHubImages/Local image selection.gif" width= "300"/>
-Screenshot showing the user add a plant with a local image
+GIF showing the user add a plant with a local image
 
 <br/> <br/>
 
 <img src="gitHubImages/Camera opened through app.gif" width= "300"/>
-Screenshot showing the user add a plant with a image taken via the device camera
+GIF showing the user add a plant with a image taken via the device camera
 
 <br/> <br/>
 
 <img src="gitHubImages/Deleting a plant.gif" width= "300"/>
-Screenshot showing the user delete a plant
+GIF showing the user delete a plant
 
 <br/> <br/>
 

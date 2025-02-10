@@ -1,9 +1,7 @@
 # Plant App
 
 ## About
-I was excited to discover that I had been selected to participate in the coding assignment for the mobile application developer role. I knew that I was competing with around 50 people. So, I wanted to make something that would distinguish me from the other applicants. I first imagined a Victorian botanical garden themed app, where I could make greenhouse window backgrounds and an ivy slewn nav bar. However, since NOCFO is a modern accounting company, I decided that this theme would be irrelevant. Instead, I planned a modern application with a minor sci-fi theme.
-
-The nav bar, the page titles and the themes were loosely inspired by the ship computers on Star Trek: The Next Generation and the UI seen on the 2015 Star Wars Battlefront game. I tested the application on my Android phone, a Android emulated device and a IOS emulated device. I have completed the assignment to the full and completed the light/dark bonus task. The user can add plants, use a local image or take one through the app. The user can also edit and delete plants by tapping twice on a plant item.
+A simple plant app, made in a week.
 
 <br/>
 

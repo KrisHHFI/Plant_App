@@ -1,7 +1,7 @@
 # Plant App
 
 ## About
-A simple plant app, made in a week.
+A cross-platform mobile app, made in a week. The app enables the user to store a virtual record of their plants. Users can attach a local image or take a new one through the device camera. 
 
 <br/>
 
